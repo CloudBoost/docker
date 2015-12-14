@@ -1,0 +1,42 @@
+#Install Elastic Search Container. 
+elasticsearch:
+  image: elasticsearch:1.5
+  command: elasticsearch -Des.network.host=0.0.0.0
+  ports:
+    - "9200:9200"
+    - "9300:9300"
+  volumes:
+    - /var/lib/elasticsearch:/var/lib/elasticsearch
+  restart: always
+
+
+#Install MongoDB
+mongo:
+  image: mongo:3.2
+  ports:
+    - "27017:27017"
+  volumes:
+    - /var/lib/mongodb:/var/lib/mongodb
+  restart: always
+
+
+#Install Redis
+redis:
+  image: redis:3.0
+  environment:
+    - REDISNODEPORT=6379
+  ports:
+    - "6379:6379"
+    - "16379:16379"
+    - "26379:26379"
+
+
+#Install CloudBoost
+cloudboost-engine: 
+ image: cloudboost/cloudboost:latest
+ ports:
+  - "4730:4730"
+ links:
+  - "elasticsearch"
+  - "mongo"
+  - "redis"
