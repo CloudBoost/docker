@@ -10,6 +10,7 @@ elasticsearch:
   restart: always
 
 
+
 #Install MongoDB
 mongo:
   image: mongo:3.2
@@ -20,18 +21,19 @@ mongo:
   restart: always
 
 
+
 #Install Redis
 redis:
   image: redis:3.0
-  environment:
-    - REDISNODEPORT=6379
   ports:
     - "6379:6379"
     - "16379:16379"
     - "26379:26379"
+  restart:always
 
 
-#Install CloudBoost
+
+#Install CloudBoost Engine
 cloudboost-engine: 
  image: cloudboost/cloudboost:latest
  ports:
@@ -40,3 +42,23 @@ cloudboost-engine:
   - "elasticsearch"
   - "mongo"
   - "redis"
+
+
+#Install CloudBoost Schema Service
+cloudboost-schema: 
+ image: cloudboost/cloudboost-schema:latest
+ ports:
+  - "3000:3000"
+ links:
+  - "mongo"
+  - "redis"
+  - "cloudboost-engine"
+
+
+#Install CloudBoost dashboard
+cloudboost-dashboard:
+  image: cloudboost/cloudboost-dashboard:latest
+  ports:
+    - "80:80"
+  links:
+    - "cloudboost-schema"
