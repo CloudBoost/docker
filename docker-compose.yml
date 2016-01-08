@@ -34,31 +34,24 @@ redis:
 
 
 #Install CloudBoost Engine
-cloudboost-engine: 
+cloudboost: 
  image: cloudboost/cloudboost:latest
  ports:
   - "4730:4730"
+ expose:
+  - "4730"
  links:
   - "elasticsearch"
   - "mongo"
   - "redis"
 
-
-#Install CloudBoost Schema Service
-cloudboost-schema: 
- image: cloudboost/cloudboost-schema:latest
- ports:
-  - "3000:3000"
- links:
-  - "mongo"
-  - "redis"
-  - "cloudboost-engine"
-
-
-#Install CloudBoost dashboard
-cloudboost-dashboard:
-  image: cloudboost/cloudboost-dashboard:latest
-  ports:
-    - "80:80"
+#Load Balancer.
+lb:
+  image: tutum/haproxy
   links:
-    - "cloudboost-schema"
+   - web
+  ports:
+   - "80:80"
+  environment:
+   - BACKEND_PORT=4730
+   - BALANCE=roundrobin
