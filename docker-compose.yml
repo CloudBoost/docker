@@ -39,11 +39,12 @@ cloudboost:
  ports:
   - "4730:4730"
  expose:
-  - "4730"
+ - "4730"
  links:
   - "elasticsearch"
   - "mongo"
   - "redis"
+ restart:always
 
 #Load Balancer.
 lb:
