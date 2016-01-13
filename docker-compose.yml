@@ -3,10 +3,10 @@ elasticsearch:
   image: elasticsearch:1.5
   command: elasticsearch -Des.network.host=0.0.0.0
   ports:
-    - "9200:9200"
-    - "9300:9300"
+  - "9200:9200"
+  - "9300:9300"
   volumes:
-    - /var/lib/elasticsearch:/var/lib/elasticsearch
+  - /var/lib/elasticsearch:/var/lib/elasticsearch
   restart: always
 
 
@@ -15,9 +15,9 @@ elasticsearch:
 mongo:
   image: mongo:3.2
   ports:
-    - "27017:27017"
+  - "27017:27017"
   volumes:
-    - /var/lib/mongodb:/var/lib/mongodb
+  - /var/lib/mongodb:/var/lib/mongodb
   restart: always
 
 
@@ -26,33 +26,33 @@ mongo:
 redis:
   image: redis:3.0
   ports:
-    - "6379:6379"
-    - "16379:16379"
-    - "26379:26379"
+  - "6379:6379"
+  - "16379:16379"
+  - "26379:26379"
   restart:always
 
 
 
 #Install CloudBoost Engine
 cloudboost: 
- image: cloudboost/cloudboost:latest
- ports:
+  image: cloudboost/cloudboost:latest
+  ports:
   - "4730:4730"
- expose:
- - "4730"
- links:
+  expose:
+  - "4730"
+  links:
   - "elasticsearch"
   - "mongo"
   - "redis"
- restart:always
+  restart:always
 
 #Load Balancer.
 lb:
   image: tutum/haproxy
   links:
-   - web
+  - web
   ports:
-   - "80:80"
+  - "80:80"
   environment:
-   - BACKEND_PORT=4730
-   - BALANCE=roundrobin
+  - BACKEND_PORT=4730
+  - BALANCE=roundrobin
