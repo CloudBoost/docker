@@ -29,7 +29,7 @@ redis:
   - "6379:6379"
   - "16379:16379"
   - "26379:26379"
-  restart:always
+  restart: always
 
 
 
@@ -44,7 +44,7 @@ cloudboost:
   - "elasticsearch"
   - "mongo"
   - "redis"
-  restart:always
+  restart: always
 
 #Load Balancer.
 lb:
