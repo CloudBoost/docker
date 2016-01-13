@@ -50,7 +50,7 @@ cloudboost:
 lb:
   image: tutum/haproxy
   links:
-  - web
+  - cloudboost
   ports:
   - "80:80"
   environment:
