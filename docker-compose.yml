@@ -45,7 +45,7 @@ cloudboost:
   - "mongo"
   - "redis"
   restart: always
-  tty: false
+  tty: true
 
 #Load Balancer.
 lb:
