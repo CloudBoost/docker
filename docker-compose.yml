@@ -49,7 +49,7 @@ cloudboost:
 
 #Load Balancer.
 lb:
-  image: haproxy
+  image: tutum/haproxy:latest
   links:
   - cloudboost
   ports:
