@@ -62,6 +62,12 @@ To create an app, You need to  :
         }
 ```
 
+Once your app is ready, You can then get the latest SDK from  https://tutorials.cloudboost.io. Remember to save the SDK in your project. and You can then init your app by :
+
+`CB.CloudApp.init('Your Server URL', 'Your App ID', 'Your App Key');`
+
+You can then follow rest of the documentation from https://tutorials.cloudboost.io
+
 ## CloudBoost Architecture
 
 CloudBoost runs on MongoDB, ElasticSearch and Redis. You're responsible for managing the uptime, backups of your data in each of these databases. If you want a managed solution, Please check out CloudBoost.io
