@@ -53,7 +53,7 @@ To create an app, You need to  :
         }
 ```
 
-To create an app, You need to  : 
+To delete an app, You need to  : 
 
 ```
         DELETE <YOUR_SERVER_URL>/app/<APP ID>
