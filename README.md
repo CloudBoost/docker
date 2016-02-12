@@ -14,7 +14,8 @@ CloudBoost is the Complete NoSQL Database Service for your app. **Think of Cloud
 
 The easiest is to use our `docker-compose.yml`.
 
-Make sure you have [docker-compose](http://docs.docker.com/compose/install/) installed, if not, install it using:
+Make sure you have [docker-compose](http://docs.docker.com/compose/install/) installed 
+If you are using pip, install it using:
 ```
 pip install -U docker-compose
 ```
