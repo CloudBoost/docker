@@ -49,7 +49,9 @@ lb:
 Once started, you'll see the CloudBoost Secure Key on the console. This is important, Please save it for future use.
 Secure Key helps you create / delete apps. 
 
-To create an app, You need to  : 
+CloudBoost Dahsboard will be on port 1440. API will be on port 80.
+
+To create an app with the API, You need to  : 
 
 ```
         POST <YOUR_SERVER_URL>/app/<APP ID>
@@ -58,7 +60,7 @@ To create an app, You need to  :
         }
 ```
 
-To delete an app, You need to  : 
+To delete an app with the API, You need to  : 
 
 ```
         DELETE <YOUR_SERVER_URL>/app/<APP ID>
