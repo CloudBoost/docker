@@ -33,7 +33,7 @@ cloudboost:
   restart: always
   tty: true
   
-#Install CloudBoost Dashboard
+#Install CloudBoost User Service
 cloudboost-user-service: 
   image: cloudboost/user-service:latest
   ports:
