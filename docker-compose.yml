@@ -32,6 +32,31 @@ cloudboost:
   - "redis"
   restart: always
   tty: true
+  
+#Install CloudBoost Dashboard
+cloudboost-user-service: 
+  image: cloudboost/user-service:latest
+  ports:
+  - "3000:3000"
+  expose:
+  - "3000"
+  links:
+  - "cloudboost"
+  restart: always
+  tty: true
+
+#Install CloudBoost Dashboard
+cloudboost-dashboard: 
+  image: cloudboost/dashboard:latest
+  ports:
+  - "1440:1440"
+  expose:
+  - "1440"
+  links:
+  - "cloudboost"
+  - "cloudboost-user-service"
+  restart: always
+  tty: true
 
 #Load Balancer.
 lb:
