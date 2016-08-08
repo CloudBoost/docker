@@ -58,6 +58,12 @@ cloudboost-dashboard:
   restart: always
   tty: true
 
+#Watchtower to update containers automatically. 
+watchtower:
+  image: centurylink/watchtower:latest
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    
 #Load Balancer.
 lb:
   image: tutum/haproxy:latest
