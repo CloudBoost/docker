@@ -42,6 +42,8 @@ cloudboost-user-service:
   - "3000"
   links:
   - "cloudboost"
+  - "mongo"
+  - "redis"
   restart: always
   tty: true
 
