@@ -1,3 +1,7 @@
+#Create a working directory. 
+sudo mkdir CloudBoost
+cd CloudBoost
+
 #Install Git
 sudo apt-get update
 sudo apt-get -y install git
