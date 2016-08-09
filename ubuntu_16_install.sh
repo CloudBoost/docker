@@ -1,3 +1,8 @@
+#Change the Directory
+if [[ $PWD/ = */docker/ubuntu16/ ]]; then
+	cd ..
+fi
+
 #Install Docker
 uname -r
 sudo apt-get update
