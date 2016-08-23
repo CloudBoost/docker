@@ -11,4 +11,5 @@ git clone https://github.com/CloudBoost/docker.git
 cd docker
 
 #Run the script. 
+cd ubuntu16
 sudo bash install.sh
