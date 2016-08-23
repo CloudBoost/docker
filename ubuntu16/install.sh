@@ -25,7 +25,7 @@ git clone https://github.com/CloudBoost/docker.git
 cd docker
 
 #Run Docker compose. 
-sudo docker-compose up
+sudo docker-compose up -d
 
 
 
