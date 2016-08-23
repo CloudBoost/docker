@@ -1,0 +1,9 @@
+[Unit]
+Description=Start CloudBoost Server
+
+[Service]
+ExecStart=/bin/bash startup.sh start
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target
