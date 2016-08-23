@@ -1,4 +1,5 @@
 #!/bin/sh -
+sudo rm -rf CloudBoost
 sudo mkdir CloudBoost
 cd CloudBoost
 
