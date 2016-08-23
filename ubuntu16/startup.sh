@@ -1,4 +1,4 @@
-#Create a working directory. 
+#!/bin/sh -
 sudo mkdir CloudBoost
 cd CloudBoost
 
