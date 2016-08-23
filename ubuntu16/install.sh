@@ -1,3 +1,5 @@
+#!/bin/sh -
+
 #Install Docker
 uname -r
 sudo apt-get update
