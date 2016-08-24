@@ -1,8 +1,9 @@
 [Unit]
-Description=Start CloudBoost Server
+Description=CloudBoost Server
 
 [Service]
-ExecStart=/bin/bash startup.sh start
+PermissionsStartOnly=true
+ExecStart=/usr/local/bin/startup.sh
 Type=oneshot
 
 [Install]
