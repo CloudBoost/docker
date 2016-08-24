@@ -4,14 +4,14 @@ sudo mkdir CloudBoost
 cd CloudBoost
 
 #Remove docker contains if it exists.
-if which docker >/dev/null; then
+#if which docker >/dev/null; then
     #Stop all containers
-    sudo docker stop $(sudo docker ps -a -q)
+#    sudo docker stop $(sudo docker ps -a -q)
     #Remove all containers
-    sudo docker rm $(sudo docker ps -a -q)
+#    sudo docker rm $(sudo docker ps -a -q)
     # Delete all images
-    sudo docker rmi $(sudo docker images -q)
-fi
+#    sudo docker rmi $(sudo docker images -q)
+#fi
 
 #Install Git
 sudo apt-get update
