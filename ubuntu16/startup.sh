@@ -15,7 +15,7 @@ fi
 
 #Install Git
 sudo apt-get update
-if which git >/dev/null; then
+if which git </dev/null; then
   sudo apt-get -y install git
 fi
 
