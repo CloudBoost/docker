@@ -65,6 +65,7 @@ watchtower:
   image: centurylink/watchtower:latest
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
+  restart: always
     
 #Load Balancer.
 lb:
@@ -76,3 +77,4 @@ lb:
   environment:
   - BACKEND_PORT=4730
   - BALANCE=roundrobin
+  restart: always
