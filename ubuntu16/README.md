@@ -8,3 +8,4 @@
 - Change permissions `chmod +x startup.sh`
 - Refresh systemctl daemon `sudo systemctl daemon-reload`
 - Start the cloudboost.service `sudo systemctl start cloudboost`
+- Enable Service at Bootup `sudo systemctl enable cloudboost`
