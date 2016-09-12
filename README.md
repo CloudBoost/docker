@@ -24,7 +24,6 @@ And then:
 ```
 git clone https://github.com/CloudBoost/docker.git
 cd docker
-# edit variables:
 docker-compose up
 ```
 
