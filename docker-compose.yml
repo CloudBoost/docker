@@ -51,9 +51,9 @@ cloudboost-user-service:
 cloudboost-dashboard: 
   image: cloudboost/dashboard:latest
   ports:
-  - "1440:1440"
+  - "80:1440"
   expose:
-  - "1440"
+  - "80"
   links:
   - "cloudboost"
   - "cloudboost-user-service"
@@ -66,15 +66,4 @@ watchtower:
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
   restart: always
-    
-#Load Balancer.
-lb:
-  image: tutum/haproxy:latest
-  links:
-  - cloudboost
-  ports:
-  - "80:80"
-  environment:
-  - BACKEND_PORT=4730
-  - BALANCE=roundrobin
-  restart: always
+   
