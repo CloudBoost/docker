@@ -1,7 +1,7 @@
 #!/bin/sh -
 
 #Install Docker
-if which docker </dev/null; then
+#if which docker </dev/null; then
   uname -r
   sudo apt-get update
   sudo apt-get install apt-transport-https ca-certificates
@@ -14,7 +14,7 @@ if which docker </dev/null; then
   sudo apt-get update
   sudo apt-get --assume-yes install linux-image-extra-$(uname -r)
   sudo apt-get --assume-yes install docker-engine
-fi
+#fi
 sudo service docker start
 
 #Install Docker Compose. 
