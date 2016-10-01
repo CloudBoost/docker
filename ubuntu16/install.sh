@@ -27,14 +27,21 @@ fi
 sudo service docker start
 
 #Install Docker Compose. 
-if which docker-compose </dev/null; then
+if command_exists docker-compose ; then
+  echo "Docker Compose exists."
+else
+  echo "Docker Compose does not exists. Installing..."
   sudo apt-get -y install python-pip
   sudo pip install docker-compose
 fi
 #Clone CloudBoost docker repo. 
-if which git </dev/null; then
+if command_exists git ; then
+ echo "Git exists."
+else
+  echo "Git does not exists. Installing..."
   sudo apt-get -y install git
 fi
+
 git clone https://github.com/CloudBoost/docker.git
 cd docker
 
