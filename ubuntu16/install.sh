@@ -1,7 +1,15 @@
 #!/bin/sh -
 
+#Functions
+command_exists () {
+    type "$1" &> /dev/null ;
+}
+
 #Install Docker
-#if which docker </dev/null; then
+if command_exists docker ; then
+    echo "Docker Exists"
+else
+  echo "Docker does not exist. Installing docker..."
   uname -r
   sudo apt-get update
   sudo apt-get install apt-transport-https ca-certificates
@@ -14,7 +22,8 @@
   sudo apt-get update
   sudo apt-get --assume-yes install linux-image-extra-$(uname -r)
   sudo apt-get --assume-yes install docker-engine
-#fi
+fi
+
 sudo service docker start
 
 #Install Docker Compose. 
