@@ -24,7 +24,7 @@ redis:
 cloudboost: 
   image: cloudboost/cloudboost:latest
   environment:
-    - IP_ADDRESS=${wget http://ipinfo.io/ip -qO -}
+    - CLOUDBOOST_PUBLIC_IP="$(wget http://ipinfo.io/ip -qO -)"
   ports:
   - "4730:4730"
   expose:
