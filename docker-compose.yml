@@ -23,7 +23,8 @@ redis:
 #Install CloudBoost Engine
 cloudboost: 
   image: cloudboost/cloudboost:latest
-  command: bash -c "export CLOUDBOOST_PUBLIC_IP=$(wget http://ipinfo.io/ip -qO -)"
+  command: export CLOUDBOOST_PUBLIC_IP=$(wget http://ipinfo.io/ip -qO -
+  command: npm start
   ports:
   - "4730:4730"
   expose:
