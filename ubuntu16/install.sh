@@ -43,10 +43,7 @@ else
 fi
 
 #If directory exists, delete it and clone a new repo. 
-if [ -d "$docker" ]; then
-  sudo rm -rf docker
-fi
-
+sudo rm -rf docker
 git clone https://github.com/CloudBoost/docker.git
 cd docker
 
