@@ -1,4 +1,10 @@
 #!/bin/sh -
+
+#Functions
+command_exists () {
+    type "$1" &> /dev/null ;
+}
+
 sudo rm -rf CloudBoost
 sudo mkdir CloudBoost
 cd CloudBoost
@@ -15,7 +21,9 @@ cd CloudBoost
 
 #Install Git
 sudo apt-get update
-if which git </dev/null; then
+if command_exists git ; then
+  echo "Git exists" 
+else
   sudo apt-get -y install git
 fi
 
