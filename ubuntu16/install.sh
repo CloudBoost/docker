@@ -42,6 +42,11 @@ else
   sudo apt-get -y install git
 fi
 
+#If directory exists, delete it and clone a new repo. 
+if [ -d "$docker" ]; then
+  sudo rm -rf docker
+fi
+
 git clone https://github.com/CloudBoost/docker.git
 cd docker
 
