@@ -46,7 +46,7 @@ You can now access your instance on the port 80 of the IP of your machine.
 **API** is running on **Port 4730** on the Public IP.
 **User Service** is running on **Port 3000** on the Public IP.
 
-You can go CloudBoost Portal (on port 80) and create your first app. **If you're using the SDK, you can talk to the app you've just created by using the API port (4730)*
+You can go CloudBoost Portal (on port 80) and create your first app. **If you're using the SDK, you can talk to the app you've just created by using the API port (4730)**
 
 `CB.CloudApp.init('http://Your_Server_IP:4730', 'Your App ID', 'Your App Key');`
 
