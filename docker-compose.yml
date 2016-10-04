@@ -23,8 +23,6 @@ redis:
 #Install CloudBoost Engine
 cloudboost: 
   image: cloudboost/cloudboost:latest
-  command: export CLOUDBOOST_PUBLIC_IP=$(wget http://ipinfo.io/ip -qO -)
-  command: npm start
   ports:
   - "4730:4730"
   expose:
@@ -38,8 +36,6 @@ cloudboost:
 #Install CloudBoost User Service
 cloudboost-user-service: 
   image: cloudboost/user-service:latest
-  command: export CLOUDBOOST_PUBLIC_IP=$(wget http://ipinfo.io/ip -qO -)
-  command: npm start
   ports:
   - "3000:3000"
   expose:
@@ -54,8 +50,6 @@ cloudboost-user-service:
 #Install CloudBoost Dashboard
 cloudboost-dashboard: 
   image: cloudboost/dashboard:latest
-  command: export CLOUDBOOST_PUBLIC_IP=$(wget http://ipinfo.io/ip -qO -)
-  command: npm start
   ports:
   - "80:1440"
   expose:
