@@ -10,8 +10,18 @@ CloudBoost is the Complete NoSQL Database Service for your app. **Think of Cloud
  - More - ACL's, User Authentication, Server-less apps and more. 
  
 
-# How to use this docker compose file.
+# Installation
 
+###If you're on Ubuntu 16
+
+```
+
+$ wget https://raw.githubusercontent.com/CloudBoost/docker/master/ubuntu16/install.sh
+$ sudo bash install.sh
+
+```
+
+### If you're using Docker-Compose. 
 The easiest is to use our `docker-compose.yml`.
 
 Make sure you have [docker-compose](http://docs.docker.com/compose/install/) installed 
@@ -29,21 +39,8 @@ docker-compose up
 
 You can now access your instance on the port 80 of the IP of your machine.
 
-## Access it from Internet
 
-We recommend the usage of SSL, so the easiest is to modify the HAProxy Config file.
-
-Once it is done, you can connect to the port of the host by adding this line to `docker-compose.yml`:
-```
-lb:
-...
-  - ports:
-    - "443:443"
-    - "80:80"
-...
-```
-
-## Installation
+## Create an app
 
 Once started, you'll see the CloudBoost Secure Key on the console. This is important, Please save it for future use.
 Secure Key helps you create / delete apps. 
