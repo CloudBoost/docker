@@ -40,34 +40,15 @@ docker-compose up
 You can now access your instance on the port 80 of the IP of your machine.
 
 
-## Create an app
+## Create your first app
 
-Once started, you'll see the CloudBoost Secure Key on the console. This is important, Please save it for future use.
-Secure Key helps you create / delete apps. 
+**CloudBoost Portal / Dashboard** is running on **Port 80** on the Public IP of the machine you've an docker-compose on. 
+**API** is running on **Port 4730** on the Public IP.
+**User Service** is running on **Port 3000** on the Public IP.
 
-CloudBoost Dahsboard will be on port 1440. API will be on port 80.
+You can go CloudBoost Portal (on port 80) and create your first app. **If you're using the SDK, you can talk to the app you've just created by using the API port (4730)*
 
-To create an app with the API, You need to  : 
-
-```
-        POST <YOUR_SERVER_URL>/app/<APP ID>
-        BODY {
-            secureKey : YOUR_SECURE_KEY
-        }
-```
-
-To delete an app with the API, You need to  : 
-
-```
-        DELETE <YOUR_SERVER_URL>/app/<APP ID>
-        BODY {
-            secureKey : YOUR_SECURE_KEY
-        }
-```
-
-Once your app is ready, You can then get the latest SDK from  https://tutorials.cloudboost.io. Remember to save the SDK in your project. and You can then init your app by :
-
-`CB.CloudApp.init('Your Server URL', 'Your App ID', 'Your App Key');`
+`CB.CloudApp.init('http://Your_Server_IP:4730', 'Your App ID', 'Your App Key');`
 
 You can then follow rest of the documentation from https://tutorials.cloudboost.io
 
