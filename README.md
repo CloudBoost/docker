@@ -73,7 +73,7 @@ You can then follow rest of the documentation from https://tutorials.cloudboost.
 
 ## CloudBoost Architecture
 
-CloudBoost runs on MongoDB, ElasticSearch and Redis. You're responsible for managing the uptime, backups of your data in each of these databases. If you want a managed solution, Please check out CloudBoost.io
+CloudBoost runs on MongoDB, and Redis. You're responsible for managing the uptime, backups of your data in each of these databases. If you want a managed solution, Please check out CloudBoost.io
 
 ## Contribute
 
