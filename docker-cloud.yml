@@ -37,6 +37,7 @@ cloudboost:
   roles:
   - global
   sequential_deployment: true
+  hostname: api
   
 #Install CloudBoost User Service
 cloudboost-user-service: 
@@ -58,6 +59,7 @@ cloudboost-user-service:
   roles:
   - global
   sequential_deployment: true
+  hostname: service
 
 #Install CloudBoost Dashboard
 cloudboost-dashboard: 
@@ -80,6 +82,7 @@ cloudboost-dashboard:
   roles:
   - global
   sequential_deployment: true
+  hostname: dashboard
 
 #Install CloudBoost Accounts
 cloudboost-accounts: 
@@ -101,4 +104,5 @@ cloudboost-accounts:
   roles:
   - global
   sequential_deployment: true
+  hostname: accounts
    
