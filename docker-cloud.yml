@@ -23,12 +23,8 @@ api:
   image: cloudboost/cloudboost:latest
   ports:
   - "4730:4730"
-  - "80:4730"
-  - "443:4730"
   expose:
   - "4730"
-  - "80"
-  - "443"
   links:
   - "mongo"
   - "redis"
@@ -48,8 +44,6 @@ service:
   image: cloudboost/user-service:latest
   ports:
   - "3000:3000"
-  - "80:3000"
-  - "443:3000"
   expose:
   - "3000"
   links:
@@ -73,11 +67,9 @@ dashboard:
   ports:
   - "80:1440"
   - "1440:1440"
-  - "443:1440"
   expose:
   - "80"
   - "1440"
-  - "443"
   links:
   - "api"
   - "service"
@@ -97,12 +89,8 @@ accounts:
   image: cloudboost/accounts:latest
   ports:
   - "1447:1447"
-  - "80:1447"
-  - "443:1447"
   expose:
   - "1447"
-  - "80"
-  - "443"
   links:
   - "api"
   - "service"
