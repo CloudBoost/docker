@@ -32,6 +32,8 @@ cloudboost:
   - "redis"
   restart: always
   tty: true
+  autoredeploy: true
+  deployment_strategy: high_availability
   
 #Install CloudBoost User Service
 cloudboost-user-service: 
@@ -46,24 +48,39 @@ cloudboost-user-service:
   - "redis"
   restart: always
   tty: true
+  autoredeploy: true
+  deployment_strategy: high_availability
 
 #Install CloudBoost Dashboard
 cloudboost-dashboard: 
   image: cloudboost/dashboard:latest
   ports:
   - "80:1440"
+  - "1440:1440"
   expose:
   - "80"
+  - "1440"
   links:
   - "cloudboost"
   - "cloudboost-user-service"
   restart: always
   tty: true
+  autoredeploy: true
+  deployment_strategy: high_availability
 
-#Watchtower to update containers automatically. 
-watchtower:
-  image: centurylink/watchtower:latest
-  volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
+#Install CloudBoost Accounts
+cloudboost-accounts: 
+  image: cloudboost/accounts:latest
+  ports:
+  - "1447:1447"
+  expose:
+  - "1447"
+  links:
+  - "cloudboost"
+  - "cloudboost-user-service"
+  - "cloudboost-dashboard"
   restart: always
+  tty: true
+  autoredeploy: true
+  deployment_strategy: high_availability
    
