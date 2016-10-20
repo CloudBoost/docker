@@ -1,14 +1,8 @@
-#Install MongoDB Data container. 
-mongo-data:
-  image: tianon/true
-
 #Install MongoDB
 mongo:
   image: mongo:3.2
   ports:
   - "27017:27017"
-  volumes_from:
-    - mongo-data
   volumes:
   - /var/lib/mongodb:/var/lib/mongodb
   restart: always
