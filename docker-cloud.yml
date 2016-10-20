@@ -34,6 +34,8 @@ cloudboost:
   deployment_strategy: high_availability
   target_num_containers: 3
   autodestroy: no
+  roles:
+  - global
   
 #Install CloudBoost User Service
 cloudboost-user-service: 
@@ -52,6 +54,8 @@ cloudboost-user-service:
   deployment_strategy: high_availability
   target_num_containers: 3
   autodestroy: no
+  roles:
+  - global
 
 #Install CloudBoost Dashboard
 cloudboost-dashboard: 
@@ -71,6 +75,8 @@ cloudboost-dashboard:
   deployment_strategy: high_availability
   target_num_containers: 3
   autodestroy: no
+  roles:
+  - global
 
 #Install CloudBoost Accounts
 cloudboost-accounts: 
@@ -89,4 +95,6 @@ cloudboost-accounts:
   deployment_strategy: high_availability
   target_num_containers: 3
   autodestroy: no
+  roles:
+  - global
    
