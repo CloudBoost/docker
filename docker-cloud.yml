@@ -32,7 +32,7 @@ cloudboost:
   tty: true
   autoredeploy: true
   deployment_strategy: high_availability
-  target_num_containers: 3
+  target_num_containers: 1
   autodestroy: no
   roles:
   - global
@@ -53,7 +53,7 @@ cloudboost-user-service:
   tty: true
   autoredeploy: true
   deployment_strategy: high_availability
-  target_num_containers: 3
+  target_num_containers: 1
   autodestroy: no
   roles:
   - global
@@ -75,7 +75,7 @@ cloudboost-dashboard:
   tty: true
   autoredeploy: true
   deployment_strategy: high_availability
-  target_num_containers: 3
+  target_num_containers: 1
   autodestroy: no
   roles:
   - global
@@ -96,7 +96,7 @@ cloudboost-accounts:
   tty: true
   autoredeploy: true
   deployment_strategy: high_availability
-  target_num_containers: 3
+  target_num_containers: 1
   autodestroy: no
   roles:
   - global
