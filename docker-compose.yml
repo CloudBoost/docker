@@ -34,6 +34,7 @@ cloudboost:
   tty: true
   autoredeploy: true
   deployment_strategy: high_availability
+  target_num_containers: 3
   
 #Install CloudBoost User Service
 cloudboost-user-service: 
@@ -50,6 +51,7 @@ cloudboost-user-service:
   tty: true
   autoredeploy: true
   deployment_strategy: high_availability
+  target_num_containers: 3
 
 #Install CloudBoost Dashboard
 cloudboost-dashboard: 
@@ -67,6 +69,7 @@ cloudboost-dashboard:
   tty: true
   autoredeploy: true
   deployment_strategy: high_availability
+  target_num_containers: 3
 
 #Install CloudBoost Accounts
 cloudboost-accounts: 
@@ -83,4 +86,5 @@ cloudboost-accounts:
   tty: true
   autoredeploy: true
   deployment_strategy: high_availability
+  target_num_containers: 3
    
