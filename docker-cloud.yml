@@ -36,6 +36,7 @@ cloudboost:
   autodestroy: no
   roles:
   - global
+  sequential_deployment: true
   
 #Install CloudBoost User Service
 cloudboost-user-service: 
@@ -56,6 +57,7 @@ cloudboost-user-service:
   autodestroy: no
   roles:
   - global
+  sequential_deployment: true
 
 #Install CloudBoost Dashboard
 cloudboost-dashboard: 
@@ -77,6 +79,7 @@ cloudboost-dashboard:
   autodestroy: no
   roles:
   - global
+  sequential_deployment: true
 
 #Install CloudBoost Accounts
 cloudboost-accounts: 
@@ -97,4 +100,5 @@ cloudboost-accounts:
   autodestroy: no
   roles:
   - global
+  sequential_deployment: true
    
