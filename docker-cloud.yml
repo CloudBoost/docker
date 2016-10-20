@@ -6,9 +6,8 @@ mongo:
   volumes:
   - /var/lib/mongodb:/var/lib/mongodb
   restart: always
-
-
-
+  autodestroy: no
+  
 #Install Redis
 redis:
   image: redis:3.0
@@ -17,8 +16,7 @@ redis:
   - "16379:16379"
   - "26379:26379"
   restart: always
-
-
+  autodestroy: no
 
 #Install CloudBoost Engine
 cloudboost: 
@@ -35,6 +33,7 @@ cloudboost:
   autoredeploy: true
   deployment_strategy: high_availability
   target_num_containers: 3
+  autodestroy: no
   
 #Install CloudBoost User Service
 cloudboost-user-service: 
@@ -52,6 +51,7 @@ cloudboost-user-service:
   autoredeploy: true
   deployment_strategy: high_availability
   target_num_containers: 3
+  autodestroy: no
 
 #Install CloudBoost Dashboard
 cloudboost-dashboard: 
@@ -70,6 +70,7 @@ cloudboost-dashboard:
   autoredeploy: true
   deployment_strategy: high_availability
   target_num_containers: 3
+  autodestroy: no
 
 #Install CloudBoost Accounts
 cloudboost-accounts: 
@@ -87,4 +88,5 @@ cloudboost-accounts:
   autoredeploy: true
   deployment_strategy: high_availability
   target_num_containers: 3
+  autodestroy: no
    
