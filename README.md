@@ -10,34 +10,38 @@ CloudBoost is the Complete NoSQL Database Service for your app. **Think of Cloud
  - More - ACL's, User Authentication, Server-less apps and more. 
  
 
-# Installation
+#Deploy CloudBoost to any Cloud. 
+ 
+CloudBoost can be deployed to any cloud with [Docker Cloud](https://cloud.docker.com)
+ 
+- AWS
+- Azure
+- SoftLayer
+- Digital Ocean 
+- Packet
+- Your private cloud. 
+ 
+###Step 1: Create a Docker Cloud account 
 
-###If you're on Ubuntu 16
+You can go here to create your new Docker Cloud account : https://cloud.docker.com. 
 
-```
+Docker Cloud is reponsible for automating CloudBoost deployment to any cloud you like. 
 
-$ wget https://raw.githubusercontent.com/CloudBoost/docker/master/ubuntu16/install.sh
-$ sudo bash install.sh
+###Step 2: Create a Node Cluster
 
-```
+A Node is a mahine in your Cloud. You can add as many nodes you like in your cluster. 
 
-### If you're using Docker-Compose. 
-The easiest is to use our `docker-compose.yml`.
+###Step 3: Create a stack
 
-Make sure you have [docker-compose](http://docs.docker.com/compose/install/) installed 
-If you are using pip, install it using:
-```
-pip install -U docker-compose
-```
-And then:
+Stacks are a collection of services like MongoDB, Redis, CloudBoost API, Dashboard and more which is essential to run the CloudBoost service. 
 
-```
-git clone https://github.com/CloudBoost/docker.git
-cd docker
-docker-compose up
-```
+You can download CloudBoost stack file here : https://github.com/CloudBoost/docker/blob/master/docker-compose.yml
 
-You can now access your instance on the port 80 of the IP of your machine.
+Your CloudBoost Service is now up and running! 
+
+##Scale
+
+Docker Cloud makes it easy for you to scale CloudBoost cluster. Check Docker Cloud documentation for more details. 
 
 
 ## Create your first app
