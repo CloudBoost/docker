@@ -35,7 +35,7 @@ A Node is a mahine in your Cloud. You can add as many nodes you like in your clu
 
 Stacks are a collection of services like MongoDB, Redis, CloudBoost API, Dashboard and more which is essential to run the CloudBoost service. 
 
-You can download CloudBoost stack file here : https://github.com/CloudBoost/docker/blob/master/docker-compose.yml
+You can download CloudBoost stack file here : https://github.com/CloudBoost/docker/blob/master/docker-cloud.yml
 
 Your CloudBoost Service is now up and running! 
 
