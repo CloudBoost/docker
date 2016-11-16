@@ -11,6 +11,8 @@ CloudBoost is the Complete NoSQL Database Service for your app. **Think of Cloud
  
 
 #Deploy CloudBoost to any Cloud. 
+
+**Note :** Docker Compose file (docker-compose.yml) is no longer supported by CloudBoost. You can use Docker Cloud file and install  CloudBoost via Docker Cloud (https://cloud.docker.com) instead. 
  
 CloudBoost can be deployed to any cloud with [Docker Cloud](https://cloud.docker.com)
  
