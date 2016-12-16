@@ -114,9 +114,9 @@ cloudboost-data-browser:
     - '3333'
   image: 'cloudboost/data-browser:latest'
   links:
-    - cloudboost
-    - cloudboost-dashboard
-    - cloudboost-user-service
+    - "api"
+    - "dashboard"
+    - "service"
   ports:
     - '3333:3333'
   restart: always
