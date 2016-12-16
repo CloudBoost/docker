@@ -105,4 +105,24 @@ accounts:
   - global
   sequential_deployment: true
   hostname: accounts
-   
+  
+#Install CloudBoost Data-Browser
+cloudboost-data-browser:
+  autoredeploy: true
+  deployment_strategy: high_availability
+  expose:
+    - '3333'
+  image: 'cloudboost/data-browser:latest'
+  links:
+    - cloudboost
+    - cloudboost-dashboard
+    - cloudboost-user-service
+  ports:
+    - '3333:3333'
+  restart: always
+  roles:
+    - global
+  sequential_deployment: true
+  target_num_containers: 3
+  tty: true
+  hostname: databrowser
