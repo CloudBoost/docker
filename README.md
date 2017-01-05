@@ -31,7 +31,7 @@ Docker Cloud is reponsible for automating CloudBoost deployment to any cloud you
 
 ###Step 2: Create a Node Cluster
 
-A Node is a mahine in your Cloud. You can add as many nodes you like in your cluster. 
+A Node is a machine in your Cloud. You can add as many nodes you like in your cluster. 
 
 ###Step 3: Create a stack
 
