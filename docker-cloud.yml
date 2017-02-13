@@ -1,112 +1,86 @@
-#Install MongoDB
-mongo:
-  image: mongo:3.2
-  ports:
-  - "27017:27017"
-  volumes:
-  - /var/lib/mongodb:/var/lib/mongodb
-  restart: always
-  autodestroy: no
-  
-#Install Redis
-redis:
-  image: redis:3.0
-  ports:
-  - "6379:6379"
-  - "16379:16379"
-  - "26379:26379"
-  restart: always
-  autodestroy: no
-
-#Install CloudBoost API
-api: 
-  image: cloudboost/cloudboost:latest
-  ports:
-  - "4730:4730"
+cloudboost:
+  autoredeploy: true
+  environment:
+    -"MAIL_PROVIDER= 'dummy value'"
+    -"MAIL_PROVIDER_API_KEY= 'dummy value'"
+    -"DOMAIN= 'dummy value'"
+    -"FROM_EMAIL= 'dummy value'"
+    -"FROM_NAME= 'dummy value'"
+  deployment_strategy: high_availability
   expose:
-  - "4730"
+    - '4730'
+  image: 'cloudboost/cloudboost:latest'
   links:
-  - "mongo"
-  - "redis"
+    - mongo
+    - redis
+  ports:
+    - '4730:4730'
   restart: always
+  roles:
+    - global
+  sequential_deployment: true
+  target_num_containers: 3
   tty: true
+cloudboost-accounts:
   autoredeploy: true
   deployment_strategy: high_availability
-  target_num_containers: 1
-  autodestroy: no
-  roles:
-  - global
-  sequential_deployment: true
-  hostname: api
-  
-#Install CloudBoost User Service
-service: 
-  image: cloudboost/user-service:latest
-  ports:
-  - "3000:3000"
   expose:
-  - "3000"
+    - '1447'
+  image: 'cloudboost/accounts:latest'
   links:
-  - "api"
-  - "mongo"
-  - "redis"
+    - cloudboost
+    - cloudboost-dashboard
+    - cloudboost-user-service
+  ports:
+    - '1447:1447'
   restart: always
+  roles:
+    - global
+  sequential_deployment: true
+  target_num_containers: 3
   tty: true
+cloudboost-dashboard:
   autoredeploy: true
   deployment_strategy: high_availability
-  target_num_containers: 1
-  autodestroy: no
-  roles:
-  - global
-  sequential_deployment: true
-  hostname: service
-
-#Install CloudBoost Dashboard
-dashboard: 
-  image: cloudboost/dashboard:latest
-  ports:
-  - "80:1440"
-  - "1440:1440"
   expose:
-  - "80"
-  - "1440"
+    - '80'
+    - '1440'
+  image: 'cloudboost/dashboard:latest'
   links:
-  - "api"
-  - "service"
+    - cloudboost
+    - cloudboost-user-service
+  ports:
+    - '80:1440'
+    - '1440:1440'
   restart: always
+  roles:
+    - global
+  sequential_deployment: true
+  target_num_containers: 3
   tty: true
+cloudboost-analytics:
   autoredeploy: true
   deployment_strategy: high_availability
-  target_num_containers: 1
-  autodestroy: no
-  roles:
-  - global
-  sequential_deployment: true
-  hostname: dashboard
-
-#Install CloudBoost Accounts
-accounts: 
-  image: cloudboost/accounts:latest
-  ports:
-  - "1447:1447"
+  environment:
+    - "HOSTED_SECUREKEY= 'dummy value'"
+    - "LOG_TOKEN= 'dummy value'"
+    - "TC_API_USER= 'dummy value'"
+    - "TC_API_PASS= 'dummy value'"
+    - "TC_SELLER_ID= 'dummy value'"
+    - "TC_PRIVATE_KEY= 'dummy value'"
   expose:
-  - "1447"
+    - '5555'
+  image: 'cloudboost/analytics:latest'
   links:
-  - "api"
-  - "service"
-  - "dashboard"
+    - cloudboost
+  ports:
+    - '5555:5555'
   restart: always
-  tty: true
-  autoredeploy: true
-  deployment_strategy: high_availability
-  target_num_containers: 1
-  autodestroy: no
   roles:
-  - global
+    - global
   sequential_deployment: true
-  hostname: accounts
-  
-#Install CloudBoost Data-Browser
+  target_num_containers: 3
+  tty: true
 cloudboost-data-browser:
   autoredeploy: true
   deployment_strategy: high_availability
@@ -114,9 +88,9 @@ cloudboost-data-browser:
     - '3333'
   image: 'cloudboost/data-browser:latest'
   links:
-    - "api"
-    - "dashboard"
-    - "service"
+    - cloudboost
+    - cloudboost-dashboard
+    - cloudboost-user-service
   ports:
     - '3333:3333'
   restart: always
@@ -125,4 +99,46 @@ cloudboost-data-browser:
   sequential_deployment: true
   target_num_containers: 3
   tty: true
-  hostname: databrowser
+cloudboost-user-service:
+  autoredeploy: true
+  environment:
+    -"MANDRILL= 'dummy value'"
+    -"MIXPANEL_TOKEN= 'dummy value'"
+    -"MAILCHIMP_API_KEY= 'dummy value'"
+    -"LOG_TOKEN= 'dummy value'"
+    -"MAILGUN_API_KEY= 'dummy value'"
+    -"MAIL_GUN_DOMAIN= 'dummy value'"
+    -"ADMIN_EMAIL= 'dummy value'"
+    -"HEROKU_USERNAME= 'dummy value'"
+    -"HEROKU_PASSWORD= 'dummy value'"
+    -"HEROKU_SALT= 'dummy value'"
+  deployment_strategy: high_availability
+  expose:
+    - '3000'
+  image: 'cloudboost/user-service:latest'
+  links:
+    - cloudboost
+    - mongo
+    - redis
+  ports:
+    - '3000:3000'
+  restart: always
+  roles:
+    - global
+  sequential_deployment: true
+  target_num_containers: 3
+  tty: true
+mongo:
+  image: 'mongo:3.2'
+  ports:
+    - '27017:27017'
+  restart: always
+  volumes:
+    - '/var/lib/mongodb:/var/lib/mongodb'
+redis:
+  image: 'redis:3.0'
+  ports:
+    - '6379:6379'
+    - '16379:16379'
+    - '26379:26379'
+  restart: always
