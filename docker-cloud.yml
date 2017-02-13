@@ -1,11 +1,11 @@
 cloudboost:
   autoredeploy: true
   environment:
-    -"MAIL_PROVIDER= 'dummy value'"
-    -"MAIL_PROVIDER_API_KEY= 'dummy value'"
-    -"DOMAIN= 'dummy value'"
-    -"FROM_EMAIL= 'dummy value'"
-    -"FROM_NAME= 'dummy value'"
+    - "MAIL_PROVIDER= '<mail provider name>'"
+    - "MAIL_PROVIDER_API_KEY= '<mail provider's api/auth key>'"
+    - "DOMAIN= '<mail domain>'"
+    - "FROM_EMAIL= '<email's from email>'"
+    - "FROM_NAME= '<email's from name>'"
   deployment_strategy: high_availability
   expose:
     - '4730'
@@ -58,29 +58,6 @@ cloudboost-dashboard:
   sequential_deployment: true
   target_num_containers: 3
   tty: true
-cloudboost-analytics:
-  autoredeploy: true
-  deployment_strategy: high_availability
-  environment:
-    - "HOSTED_SECUREKEY= 'dummy value'"
-    - "LOG_TOKEN= 'dummy value'"
-    - "TC_API_USER= 'dummy value'"
-    - "TC_API_PASS= 'dummy value'"
-    - "TC_SELLER_ID= 'dummy value'"
-    - "TC_PRIVATE_KEY= 'dummy value'"
-  expose:
-    - '5555'
-  image: 'cloudboost/analytics:latest'
-  links:
-    - cloudboost
-  ports:
-    - '5555:5555'
-  restart: always
-  roles:
-    - global
-  sequential_deployment: true
-  target_num_containers: 3
-  tty: true
 cloudboost-data-browser:
   autoredeploy: true
   deployment_strategy: high_availability
@@ -102,16 +79,13 @@ cloudboost-data-browser:
 cloudboost-user-service:
   autoredeploy: true
   environment:
-    -"MANDRILL= 'dummy value'"
-    -"MIXPANEL_TOKEN= 'dummy value'"
-    -"MAILCHIMP_API_KEY= 'dummy value'"
-    -"LOG_TOKEN= 'dummy value'"
-    -"MAILGUN_API_KEY= 'dummy value'"
-    -"MAIL_GUN_DOMAIN= 'dummy value'"
-    -"ADMIN_EMAIL= 'dummy value'"
-    -"HEROKU_USERNAME= 'dummy value'"
-    -"HEROKU_PASSWORD= 'dummy value'"
-    -"HEROKU_SALT= 'dummy value'"
+    - "MANDRILL= '<Mandrill token/auth-key>'"
+    - "MIXPANEL_TOKEN= '59f8c851677a01bdbfa6cffb2865c682'"
+    - "MAILCHIMP_API_KEY= '<mailchimp apu/auth key>'"
+    - "LOG_TOKEN= 'c064fc7e-4fc6-41e6-b51f-32c30deafdcc'"
+    - "MAILGUN_API_KEY= '<mailgun apu/auth key>'"
+    - "MAIL_GUN_DOMAIN= '<mailgun domain>'"
+    - "ADMIN_EMAIL= '<Admin Email Address>'"
   deployment_strategy: high_availability
   expose:
     - '3000'
