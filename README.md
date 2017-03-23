@@ -10,11 +10,10 @@ CloudBoost is the Complete NoSQL Database Service for your app. **Think of Cloud
  - More - ACL's, User Authentication, Server-less apps and more. 
  
 
-#Deploy CloudBoost to any Cloud. 
+#Deploy CloudBoost with Docker.
 
-**Note :** Docker Compose file (docker-compose.yml) is no longer supported by CloudBoost. You can use Docker Cloud file and install  CloudBoost via Docker Cloud (https://cloud.docker.com) instead. 
  
-CloudBoost can be deployed to any cloud with [Docker Cloud](https://cloud.docker.com)
+CloudBoost can be deployed to any cloud with [Docker Compose]
  
 - AWS
 - Azure
@@ -23,32 +22,28 @@ CloudBoost can be deployed to any cloud with [Docker Cloud](https://cloud.docker
 - Packet
 - Your private cloud. 
  
-###Step 1: Create a Docker Cloud account 
+###Step 1: Clone/Download this repository.
 
-You can go here to create your new Docker Cloud account : https://cloud.docker.com. 
+Clone/Download this repository on any cloud platform ( AWS, DigitalOcean etc. ).  You need to have docker and docker-compose installed.
 
-Docker Cloud is reponsible for automating CloudBoost deployment to any cloud you like. 
+###Step 2: Setup up services.
 
-###Step 2: Create a Node Cluster
+Fill in the optional environment variables present in docker-compose.yml file. CloudBoost will work if you choose not to fill these, but some of the services like email's will not work.
 
-A Node is a machine in your Cloud. You can add as many nodes you like in your cluster. 
+###Step 3: Run with Docker
 
-###Step 3: Create a stack
+Docker-compose file is a collection of services like MongoDB, Redis, CloudBoost API, Dashboard and more which is essential to run the CloudBoost service.
 
-Stacks are a collection of services like MongoDB, Redis, CloudBoost API, Dashboard and more which is essential to run the CloudBoost service. 
+To run, navigate to docker repo you cloned, and run - 
 
-You can download CloudBoost stack file here : https://github.com/CloudBoost/docker/blob/master/docker-cloud.yml
+`sudo docker-compose up`
 
 Your CloudBoost Service is now up and running! 
-
-##Scale
-
-Docker Cloud makes it easy for you to scale CloudBoost cluster. Check Docker Cloud documentation for more details. 
 
 
 ## Create your first app
 
-**CloudBoost Portal / Dashboard** is running on **Port 80** on the Public IP of the machine you've an docker-compose on. 
+**CloudBoost Portal / Dashboard** is running on **Port 1440** on the Public IP of the machine you've an docker-compose on. 
 **API** is running on **Port 4730** on the Public IP.
 **User Service** is running on **Port 3000** on the Public IP.
 
