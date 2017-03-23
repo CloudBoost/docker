@@ -10,7 +10,7 @@ CloudBoost is the Complete NoSQL Database Service for your app. **Think of Cloud
  - More - ACL's, User Authentication, Server-less apps and more. 
  
 
-<h2>Deploy CloudBoost with Docker.</h2>
+## Deploy CloudBoost with Docker.
 
  
 CloudBoost can be deployed to any cloud with [Docker Compose]
@@ -23,14 +23,14 @@ CloudBoost can be deployed to any cloud with [Docker Compose]
 - Your private cloud.
 
 
-<h4>Before you begin:</h4> Have these installed.
+### Before you begin: Have these installed.
 
 You need to install these on your machine before you install CloudBoost. 
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [Docker](https://docs.docker.com/engine/installation/)
 - [Docker Compose](https://docs.docker.com/compose/install/) 
 
-<h4>Step 1:</h4> Clone this repository.
+### Step 1: Clone this repository.
 
 Clone this repo on your machine. 
 
@@ -39,11 +39,11 @@ git clone https://github.com/CloudBoost/docker.git
 cd docker
 ```
 
-<h4>Step 2:</h4> Edit compose file (optional)
+### Step 2: Edit compose file (optional)
 
 We've left placeholders for you to fill in `docker-compose.yml` file. If you leave this step most of CloudBoost will still work but few services like Email will not. 
 
-<h4>Step 3:</h4>: Run with Docker Compose
+### Step 3: Run with Docker Compose
 
 Docker Compose file is a collection of services like MongoDB, Redis, CloudBoost Engine, Dashboard and more which is essential to run the CloudBoost Service.
 
@@ -56,7 +56,7 @@ sudo docker-compose up
 Your CloudBoost Service is now up and running! Go to http://server-ip:1447 or http://localhost:1447 launch it in the browser. If you don't see anything coming up in your browser, make sure you've unblocked the port on your firewall.
 
 
-<h2>Create your first app</h2>
+## Create your first app
 
 **CloudBoost Portal / Dashboard** is running on **Port 1440** on the Public IP of the machine you've an docker-compose on. 
 **API** is running on **Port 4730** on the Public IP.
