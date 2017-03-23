@@ -23,7 +23,7 @@ CloudBoost can be deployed to any cloud with [Docker Compose]
 - Your private cloud.
 
 
-### Before you begin: Have these installed.
+### Before you begin
 
 You need to install these on your machine before you install CloudBoost. 
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
