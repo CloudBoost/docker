@@ -58,12 +58,9 @@ Your CloudBoost Service is now up and running! Go to http://server-ip:1447 or ht
 
 ## Create your first app
 
-**CloudBoost Portal / Dashboard** is running on **Port 1440** on the Public IP of the machine you've an docker-compose on. 
-**API** is running on **Port 4730** on the Public IP.
-**User Service** is running on **Port 3000** on the Public IP.
-**Accounts** is running on **Port 1447** on the Public IP.
+**CloudBoost API** is running on **Port 4730** on the Public IP.
 
-You can go CloudBoost Portal (on port 80) and create your first app. **If you're using the SDK, you can talk to the app you've just created by using the API port (4730)**
+**You can talk to the app you've just created by using the API port (4730)**
 
 `CB.CloudApp.init('http://Your_Server_IP:4730', 'Your App ID', 'Your App Key');`
 
