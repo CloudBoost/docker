@@ -12,7 +12,8 @@ CloudBoost is the Complete NoSQL Database Service for your app. **Think of Cloud
 
 ## Deploy CloudBoost with Docker.
 
- 
+**Important:** Open Source CloudBoost only contains the API. If you're looking for dashboard and the UI, we recommend using the managed service [here](https://www.cloudboost.io). We also have an enterprise offering for enterprises where we have CloudBoost installed on your servers. Please [reach out to us here](https://cloudboostio.typeform.com/to/Y4JOQD) if you're interested. 
+
 CloudBoost can be deployed to any cloud with [Docker Compose]
  
 - AWS
