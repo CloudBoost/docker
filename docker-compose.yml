@@ -14,6 +14,7 @@ redis:
   restart: always
 api:
   environment:
+    - "CLOUDBOOST_ANALYTICS_SERVICE_HOST=cluster-analytics.cloudboost.io" 
     - "MAIL_PROVIDER= '<mail provider name>'"
     - "MAIL_PROVIDER_API_KEY= '<mail provider's api/auth key>'"
     - "DOMAIN= '<mail domain>'"
@@ -25,4 +26,4 @@ api:
     - redis
   ports:
     - '4730:4730'
-    - '4730:80'
+    - '80:4730'
